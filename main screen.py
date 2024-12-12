@@ -206,7 +206,7 @@ class MainWindow(Gtk.ApplicationWindow):
                 h1_contain_box=Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL,hexpand=True,name="uh_1_box")
                 h2_contain_box=Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL,hexpand=True,name="uh_2_box")
                 label_category=Gtk.Label(label=category_json['name']+"                 ",css_classes=["label"])
-                label_sum=Gtk.Label(label="cost: "+str(sum)+" NT$",css_classes=["label"],name="sum")
+                label_sum=Gtk.Label(label=" "+str(sum)+" NT$",css_classes=["label"],name="sum")
                 expand_button=Gtk.Button(label="◀",css_classes=["label"])
                 space_box=Gtk.Box(hexpand=True)
                 revealer=Gtk.Revealer(transition_type=Gtk.RevealerTransitionType.SLIDE_DOWN)
@@ -451,7 +451,7 @@ class MainWindow(Gtk.ApplicationWindow):
             for sublist in self.array[category_json['id']]:
                 regis=cast(C_data,sublist)
                 sum+=float(regis.amount)
-            sum_label.set_label("cost: "+str(sum)+" NT$")
+            sum_label.set_label(" "+str(sum)+" NT$")
             print(sum)
 
     def creat_widget(self):
@@ -497,7 +497,7 @@ class MainWindow(Gtk.ApplicationWindow):
                 h1_contain_box=Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL,hexpand=True,name="uh_1_box")
                 h2_contain_box=Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL,hexpand=True,name="uh_2_box")
                 label_category=Gtk.Label(label=category_json['name']+"                 ",css_classes=["label"])
-                label_sum=Gtk.Label(label="cost: "+str(sum)+" NT$",css_classes=["label"],name="sum")
+                label_sum=Gtk.Label(label=" "+str(sum)+" NT$",css_classes=["label"],name="sum")
                 expand_button=Gtk.Button(label="◀",css_classes=["label"])
                 space_box=Gtk.Box(hexpand=True)
                 revealer=Gtk.Revealer(transition_type=Gtk.RevealerTransitionType.SLIDE_DOWN)
@@ -550,7 +550,7 @@ class MainWindow(Gtk.ApplicationWindow):
                     self.box_store_dict[category_json['name']]+=1
 
     def add(self,button):
-        ExpenseHandler.create_expense(self.token,"expense",9,"test","test",200,25,datetime.datetime.now().strftime("%Y-%m-%d"),datetime.datetime.now().strftime("%H:%M:%S"),"aaaaaaaaaaaa")
+        # ExpenseHandler.create_expense(self.token,"expense",9,"test","test",200,25,datetime.datetime.now().strftime("%Y-%m-%d"),datetime.datetime.now().strftime("%H:%M:%S"),"aaaaaaaaaaaa")
         self.creat_widget()
 
 
